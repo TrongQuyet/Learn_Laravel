@@ -1,0 +1,22 @@
+# dot
+.git
+.env
+.composer
+.DS_Store
+
+# libs
+vendor
+node_modules
+
+# storage
+/dbdata
+storage/*.key
+
+# logs
+*.log
+
+# others
+/.docker
+/Makefile
+/.gitlab-ci.yml
+/docker-compose*
