@@ -23,7 +23,6 @@ const route = useRoute();
 const email = ref(null);
 const users = ref(null);
 const message = ref(null);
-
 async function onLogout() {
     try {
         await apiRequest.get("/logout");
