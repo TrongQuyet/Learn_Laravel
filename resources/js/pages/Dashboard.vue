@@ -7,9 +7,9 @@
     <button @click="getApi">Get Api</button>
     <button @click="getContracts">Get Contracts</button>
 </template>
-<script setup>
+<script lang="ts" setup>
 import { ref, onMounted } from "vue";
-import apiRequest from "../../utils/apiRequest.js";
+import apiRequest from "@/utils/apiRequest";
 import { useRoute, useRouter } from "vue-router";
 import QRCode from "qrcode";
 import { getMessaging, onMessage } from "firebase/messaging";
@@ -38,7 +38,7 @@ async function getContracts() {
         const url = await QRCode.toDataURL(
             `http://localhost:8000/contract/${response.data[0].id}`
         );
-        document.getElementById("qrcode").src = url;
+        (document.getElementById("qrcode") as HTMLImageElement).src = url;
     } catch (error) {
         console.log(error);
     }
@@ -84,8 +84,8 @@ const getUsers = async () => {
     }
 };
 
-window.Echo.private("message").listen("NewMessage", (e) => {
-    message.value = e.message;
+window.Echo.private("message").listen("NewMessage", (e: Event) => {
+    message.value = (e.target as any).message;
 });
 
 onMounted(async () => {

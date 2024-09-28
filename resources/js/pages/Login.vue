@@ -26,9 +26,9 @@
         </div>
     </div>
 </template>
-<script setup>
+<script lang="ts" setup>
 import { onMounted, ref } from "vue";
-import apiRequest from "../../utils/apiRequest.js";
+import apiRequest from "@/utils/apiRequest";
 import { useRoute, useRouter } from "vue-router";
 
 const router = useRouter();
@@ -41,15 +41,6 @@ const form = ref({
 function loginWithGitHub() {
     window.location.href = "/api/login/github";
 }
-
-const getUser = async () => {
-    try {
-        const response = await apiRequest.get("/user");
-        email.value = response.data.email;
-    } catch (error) {
-        console.log(error);
-    }
-};
 
 async function onLogin() {
     try {
