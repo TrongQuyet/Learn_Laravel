@@ -19,6 +19,7 @@
         "nwidart/laravel-modules": "^11.0",
         "predis/predis": "2.0",
         "pusher/pusher-php-server": "^7.2",
+        "robsontenorio/laravel-keycloak-guard": "^1.6",
         "spatie/crawler": "^8.2",
         "spatie/laravel-permission": "^6.9",
         "twilio/sdk": "^8.3"

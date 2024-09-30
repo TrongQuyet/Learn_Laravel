@@ -3,6 +3,7 @@
 use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use Modules\Web\Http\Controllers\AuthController;
+use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -38,3 +39,8 @@ Route::middleware(['auth:api','verified', 'role:admin|editor', 'throttle:60,1'])
 });
 Route::get('login/{provider}', [AuthController::class, 'redirectToProvider']);
 Route::get('auth/{provider}/callback', [AuthController::class, 'handleProviderCallback']);
+
+Route::middleware('auth:api_keylocak')->get('user-keylocak', function (Request $request) {
+    \Log::info("user-keylocak");
+    return $request->user();
+});

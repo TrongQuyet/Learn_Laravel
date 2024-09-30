@@ -44,6 +44,10 @@ return [
             'driver' => 'sanctum',
             'provider' => 'users',
         ],
+        'api_keylocak' => [
+            'driver' => 'keycloak',
+            'provider' => 'users',
+        ]
     ],
 
     /*

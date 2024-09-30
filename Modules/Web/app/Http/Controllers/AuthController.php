@@ -61,6 +61,7 @@ class AuthController extends Controller
         }
         $user = Auth::getProvider()->retrieveByCredentials(['email' => $request->email, 'password' => $request->password]);
         Auth::login($user);
+        info(Auth::token());
         return $this->authenticated($request->password, $user);
         // return response()->json(['message' => 'Logged in successfully']);
     }
