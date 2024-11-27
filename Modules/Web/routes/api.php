@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
  *
 */
 Route::post('login', [AuthController::class, 'login']);
+Route::post('login1', [AuthController::class, 'login']);
 Route::post('register', [AuthController::class, 'register']);
 Route::middleware(['auth:api','verified', 'role:admin|editor', 'throttle:60,1'])->group( function () {
     Route::get('contracts', function () {
