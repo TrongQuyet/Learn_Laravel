@@ -3,7 +3,7 @@
         <div class="login-card">
             <h2>Login1</h2>
             <form @submit.prevent="onLogin">
-                <label for="username">Username2:</label>
+                <label for="username">Username1:</label>
                 <input
                     type="text"
                     id="username"
