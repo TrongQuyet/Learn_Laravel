@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="login-card">
-            <h2>Login</h2>
+            <h2>Login124</h2>
             <form @submit.prevent="onLogin">
                 <label for="username">Username:</label>
                 <input
